@@ -25,3 +25,4 @@ jobs:
         run: echo Do the deploy productuon cron worker work here...
       - name: Test timeout
         run: sleep 2m
+        timeout-minutes: 1
