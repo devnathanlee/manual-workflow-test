@@ -17,9 +17,11 @@ jobs:
         id: printPuppyType
         run: echo The puppy is ${{ github.event.inputs.puppy }}
       - name: Print if input equal to production-web
-        if: github.event.inputs.deploy-env === 'production-web'
+        if: github.event.inputs.deploy-env == 'production-web'
         run: echo Do the deploy production web work here...
       - name: Print if input equal to production-api
+        if: github.event.inputs.deploy-env == 'production-api'
         run: echo Do the deploy production api worke here...
       - name: Print if input equal to production-cron-worker
+        if: github.event.inputs.deploy-env == 'production-cron-worker'
         run: echo Do the deploy productuon cron worker work here...
