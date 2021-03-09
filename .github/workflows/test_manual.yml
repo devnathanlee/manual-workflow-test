@@ -4,6 +4,8 @@ on:
       inputs:
         puppy:
           description: 'A kind of puppy.'
+        deploy-env:
+          description: 'Which env you wanna deploy (production-api/production-web/production-cron-worker)'
           required: true
 
 jobs:
@@ -14,3 +16,10 @@ jobs:
       - name: Print puppy type
         id: printPuppyType
         run: echo The puppy is ${{ github.event.inputs.puppy }}
+      - name: Print if input equal to production-web
+        if: github.event.inputs.deploy-env === 'production-web'
+        run: echo Do the deploy production web work here...
+      - name: Print if input equal to production-api
+        run: echo Do the deploy production api worke here...
+      - name: Print if input equal to production-cron-worker
+        run: echo Do the deploy productuon cron worker work here...
