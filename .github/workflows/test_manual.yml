@@ -1,5 +1,5 @@
 name: Test manual action run
-  on:
+on:
     workflow_dispatch:
       inputs:
         puppy:
