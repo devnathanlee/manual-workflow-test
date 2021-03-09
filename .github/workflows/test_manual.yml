@@ -23,3 +23,5 @@ jobs:
       - name: Print if input equal to production-cron-worker
         if: github.event.inputs.deploy-env == 'production-cron-worker'
         run: echo Do the deploy productuon cron worker work here...
+      - name: Test timeout
+        run: sleep 2m
