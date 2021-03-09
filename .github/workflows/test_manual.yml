@@ -5,6 +5,9 @@ on:
         deploy-env:
           description: 'Which env you wanna deploy (production-api/production-web/production-cron-worker)'
           required: true
+    push:
+      branches:
+        - production
 
 jobs:
   activation:
